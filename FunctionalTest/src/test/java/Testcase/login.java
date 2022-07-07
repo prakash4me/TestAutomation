@@ -18,6 +18,7 @@ import Pages.loginPage;
 
 public class login {
 
+	//Initialization
 	WebDriver driver;
     
 	@BeforeTest
