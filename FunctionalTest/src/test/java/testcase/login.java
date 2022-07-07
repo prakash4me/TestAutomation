@@ -1,4 +1,4 @@
-package Testcase;
+package testcase;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -11,9 +11,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import Pages.Dashboard;
-import Pages.ProjectPopup;
-import Pages.loginPage;
+import pages.Dashboard;
+import pages.ProjectPopup;
+import pages.loginPage;
 
 
 public class login {
@@ -34,9 +34,9 @@ public class login {
     @Test(priority = 1)
 	public void loginCase() throws InterruptedException{
     loginPage objLogin = new loginPage(driver);
-    objLogin.enterUsername("pdivya.work@gmail.com");
+    objLogin.enterUsername("geethasaravanan@asteroidsoft.com");
     Thread.sleep(2000);
-    objLogin.enterPassword("Divya770890");
+    objLogin.enterPassword("qwerty123");
     Thread.sleep(2000);
     //objLogin.selectCompany("Bygglov24");
     objLogin.clickLogin();
