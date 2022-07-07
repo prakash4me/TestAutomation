@@ -21,6 +21,8 @@ public class login {
 	//Initialization
 	WebDriver driver;
     
+	WebDriver Testdriver;
+	
 	@BeforeTest
 	public void lauchBrowser() {
 	System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
