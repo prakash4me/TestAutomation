@@ -1,4 +1,4 @@
-package Testcase;
+package testcase;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -11,18 +11,15 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import Pages.Dashboard;
-import Pages.ProjectPopup;
-import Pages.loginPage;
+import pages.Dashboard;
+import pages.ProjectPopup;
+import pages.loginPage;
 
 
 public class login {
 
-	//Initialization
 	WebDriver driver;
     
-	WebDriver Testdriver;
-	
 	@BeforeTest
 	public void lauchBrowser() {
 	System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
