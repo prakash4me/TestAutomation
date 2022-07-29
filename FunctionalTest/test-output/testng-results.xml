@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-30T05:11:25Z" name="Default suite" finished-at="2022-06-30T05:13:43Z" duration-ms="138173">
+  <suite started-at="2022-07-29T04:18:38Z" name="Default suite" finished-at="2022-07-29T04:20:16Z" duration-ms="97657">
     <groups>
     </groups>
-    <test started-at="2022-06-30T05:11:25Z" name="Default test" finished-at="2022-06-30T05:13:43Z" duration-ms="138173">
-      <class name="Testcase.login">
-        <test-method is-config="true" signature="lauchBrowser()[pri:0, instance:Testcase.login@17f62e33]" started-at="2022-06-30T05:11:25Z" name="lauchBrowser" finished-at="2022-06-30T05:11:58Z" duration-ms="33158" status="PASS">
+    <test started-at="2022-07-29T04:18:38Z" name="Default test" finished-at="2022-07-29T04:20:16Z" duration-ms="97657">
+      <class name="testcase.login">
+        <test-method is-config="true" signature="lauchBrowser()[pri:0, instance:testcase.login@14f9390f]" started-at="2022-07-29T04:18:38Z" name="lauchBrowser" finished-at="2022-07-29T04:18:50Z" duration-ms="11380" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lauchBrowser -->
-        <test-method signature="loginCase()[pri:1, instance:Testcase.login@17f62e33]" started-at="2022-06-30T05:11:58Z" name="loginCase" finished-at="2022-06-30T05:12:06Z" duration-ms="7276" status="PASS">
+        <test-method signature="loginCase()[pri:1, instance:testcase.login@14f9390f]" started-at="2022-07-29T04:18:50Z" name="loginCase" finished-at="2022-07-29T04:18:57Z" duration-ms="7474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCase -->
-        <test-method signature="createProject()[pri:2, instance:Testcase.login@17f62e33]" started-at="2022-06-30T05:12:06Z" name="createProject" finished-at="2022-06-30T05:13:43Z" duration-ms="97723" status="PASS">
+        <test-method signature="createProject()[pri:2, instance:testcase.login@14f9390f]" started-at="2022-07-29T04:18:57Z" name="createProject" finished-at="2022-07-29T04:19:22Z" duration-ms="24522" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createProject -->
-      </class> <!-- Testcase.login -->
+        <test-method signature="sectiondrawing()[pri:3, instance:testcase.login@14f9390f]" started-at="2022-07-29T04:19:22Z" name="sectiondrawing" finished-at="2022-07-29T04:20:16Z" duration-ms="54198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sectiondrawing -->
+      </class> <!-- testcase.login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
