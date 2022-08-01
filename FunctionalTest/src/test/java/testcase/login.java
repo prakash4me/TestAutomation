@@ -1,19 +1,15 @@
 package testcase;
 
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import pages.Dashboard;
 import pages.ProjectPopup;
 import pages.loginPage;
+import pages.sectiondrawing;
 
 
 public class login {
@@ -59,18 +55,38 @@ public class login {
     	objprojectPopup.clickCreate();
     	Thread.sleep(3000);
     }
-    
-    
-    
-    
-    
-   /* @AfterTest
-    public void quitBrowser()
+    @Test(priority = 3)
+    public void sectiondrawing() throws InterruptedException
     {
-    	driver.quit();
+    	sectiondrawing objsectiondrawing = new sectiondrawing(driver);
+    	objsectiondrawing.clicksectiondrawing();
+    	Thread.sleep(3000);
+    	objsectiondrawing.clickroof();
+    	Thread.sleep(3000);
+    	objsectiondrawing.clickrooftype();
+    	Thread.sleep(3000);
+    	objsectiondrawing.selectpulpet();
+    	Thread.sleep(3000);
+    	objsectiondrawing.selectroofmaterial();
+    	Thread.sleep(3000);
+    	objsectiondrawing.clickroofcolor();
+    	Thread.sleep(3000);
+    	objsectiondrawing.selectroofcolor();
+    	Thread.sleep(3000);
+    	objsectiondrawing.applyroofcolor();
+    	Thread.sleep(3000);
+    	objsectiondrawing.gableoverhang();
+    	Thread.sleep(3000);
+    	objsectiondrawing.overhang();
+    	Thread.sleep(3000);
+    	objsectiondrawing.nockyes();
+    	Thread.sleep(3000);
+    	objsectiondrawing.selectdirection();
+    	Thread.sleep(3000);
+    	objsectiondrawing.select3d();
+    	Thread.sleep(3000);
     }
-    */
-	
+    
 	
 }
 
