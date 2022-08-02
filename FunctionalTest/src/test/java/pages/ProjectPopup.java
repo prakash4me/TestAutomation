@@ -12,7 +12,7 @@ public class ProjectPopup {
 	
 	WebDriver driver;
 	
-  // Locator for constructiontype 
+  // Locator for construction type 
 	By constructionType = By.xpath("//*[@id=\"create-project-section\"]/div[2]/div[3]/div[12]/div/label");
 	
 	//Locator for create button
@@ -39,7 +39,7 @@ public class ProjectPopup {
 	 */
 	 JavascriptExecutor js = (JavascriptExecutor)driver;
 	 js.executeScript("document.querySelector('#Loft > div.img-column-img-div').click()");
-	 		
+	 
 	 
  }
  
