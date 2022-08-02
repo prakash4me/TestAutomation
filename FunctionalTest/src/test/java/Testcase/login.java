@@ -34,9 +34,9 @@ public class login {
     @Test(priority = 1)
 	public void loginCase() throws InterruptedException{
     loginPage objLogin = new loginPage(driver);
-    objLogin.enterUsername("pdivya.work@gmail.com");
+    objLogin.enterUsername("geethasaravanan@asteroidsoft.com");
     Thread.sleep(2000);
-    objLogin.enterPassword("Divya770890");
+    objLogin.enterPassword("qwerty123");
     Thread.sleep(2000);
     //objLogin.selectCompany("Bygglov24");
     objLogin.clickLogin();
