@@ -2,7 +2,7 @@
 <suite name="testcase">
   <test name="login">
     <classes>
-      <class name="login"/>
+      <class name="testcase.login"/>
     </classes>
   </test>
 </suite>

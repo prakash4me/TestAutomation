@@ -30,7 +30,7 @@ public class login {
     @Test(priority = 1)
 	public void loginCase() throws InterruptedException{
     loginPage objLogin = new loginPage(driver);
-    objLogin.enterUsername("geethasaravanan@asteroidsoft.com");
+    objLogin.enterUsername("automationtestemail@gmail.com");
     Thread.sleep(2000);
     objLogin.enterPassword("qwerty123");
     Thread.sleep(2000);
@@ -40,7 +40,7 @@ public class login {
     
 	}
     
-    @Test(priority = 2)
+   
     public void createProject() throws InterruptedException{
     	Dashboard objDashboard = new Dashboard(driver);
     	objDashboard.createProject();
@@ -55,7 +55,7 @@ public class login {
     	objprojectPopup.clickCreate();
     	Thread.sleep(3000);
     }
-    @Test(priority = 3)
+   
     public void sectiondrawing() throws InterruptedException
     {
     	sectiondrawing objsectiondrawing = new sectiondrawing(driver);
