@@ -30,7 +30,7 @@ public class login {
     @Test(priority = 1)
 	public void loginCase() throws InterruptedException{
     loginPage objLogin = new loginPage(driver);
-    objLogin.enterUsername("geethasaravanan@asteroidsoft.com");
+    objLogin.enterUsername("automationtestemail@gmail.com");
     Thread.sleep(2000);
     objLogin.enterPassword("qwerty123");
     Thread.sleep(2000);
