@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import pages.ProjectPopup;
 import pages.loginPage;
-import pages.sectiondrawing;
+import pages.SectiondrawingPage;
 
 
 public class login {
@@ -55,37 +55,7 @@ public class login {
     	objprojectPopup.clickCreate();
     	Thread.sleep(3000);
     }
-    @Test(priority = 3)
-    public void sectiondrawing() throws InterruptedException
-    {
-    	sectiondrawing objsectiondrawing = new sectiondrawing(driver);
-    	objsectiondrawing.clicksectiondrawing();
-    	Thread.sleep(3000);
-    	objsectiondrawing.clickroof();
-    	Thread.sleep(3000);
-    	objsectiondrawing.clickrooftype();
-    	Thread.sleep(3000);
-    	objsectiondrawing.selectpulpet();
-    	Thread.sleep(3000);
-    	objsectiondrawing.selectroofmaterial();
-    	Thread.sleep(3000);
-    	objsectiondrawing.clickroofcolor();
-    	Thread.sleep(3000);
-    	objsectiondrawing.selectroofcolor();
-    	Thread.sleep(3000);
-    	objsectiondrawing.applyroofcolor();
-    	Thread.sleep(3000);
-    	objsectiondrawing.gableoverhang();
-    	Thread.sleep(3000);
-    	objsectiondrawing.overhang();
-    	Thread.sleep(3000);
-    	objsectiondrawing.nockyes();
-    	Thread.sleep(3000);
-    	objsectiondrawing.selectdirection();
-    	Thread.sleep(3000);
-    	objsectiondrawing.select3d();
-    	Thread.sleep(3000);
-    }
+
     
 	
 }
