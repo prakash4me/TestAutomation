@@ -3,6 +3,7 @@
   <test name="login">
     <classes>
       <class name="testcase.login"/>
+      <class name="testcase.sectiondrawing"/>
     </classes>
   </test>
 </suite>
