@@ -9,17 +9,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class sectiondrawing {
+public class SectiondrawingPage {
 	WebDriver driver;
 	
-	// Locator for section drawing 
-	By clicksectiondrawing = By.xpath("//*[@id=\"path10915\"]");
+	// Locator for section drawing icon on top
+	By clicksectiondrawingbutton = By.xpath("//[@id=\"btnSection\"]");
 	
-	// Locator for Roof 
-		By clickroof = By.xpath("//*[@id=\"roof_actv\"]");
+	// Locator for Roof menu icon
+		By clickroof = By.xpath("//*[@id=\"roof_li_id\"]");
 		
-	// Locator for Roof 
-		By selectpulpet = By.xpath("//*[@id=\"PuplettakLeft_Roof\"]/span");
+	// Locator for Roof info section
+		// Locator for clicking roof type option
+		By selectRoofType = By.id("ddlRoofType");
+		// Locator for pulpet roof option from pop-up
+		By selectpulpet = By.id("PuplettakLeft_Roof");
 		
 		By coloritem = By.xpath("//*[@id=\"ddlFacadeRoofColour\"]/div[16]");
 		
@@ -32,28 +35,28 @@ public class sectiondrawing {
 		
 	
 		
-	public sectiondrawing(WebDriver driver) {
+	public SectiondrawingPage(WebDriver driver) {
         this.driver = driver;
 	}
 
 
-	public void clicksectiondrawing() {
-		driver. findElement(By.id("svg5")).click();
+	public void clicksectiondrawingbutton() {
+		driver. findElement(clicksectiondrawingbutton).click();
 		
 	}
 
 	 public void clickroof()
 	 {
 		 
-		 driver. findElement(By.id("roof_actv")).click();
+		 driver. findElement(clickroof).click();
 	 }
 	 public void clickrooftype()
 	 { 
-		 driver.findElement(By.id("ddlRoofType")).click();
+		 driver.findElement(selectRoofType).click();
 	 }
 	 public void selectpulpet()
 	 {
-		 driver.findElement(By.id("PuplettakLeft_Roof")).click();
+		 driver.findElement(selectpulpet).click();
 	 }
 	 public void selectroofmaterial()
 	 {
