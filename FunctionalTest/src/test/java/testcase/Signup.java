@@ -1,5 +1,9 @@
 package testcase;
 
-public class Signup {
+import org.openqa.selenium.WebDriver;
+import testcase.Login;
 
+public class Signup {
+	WebDriver driver;
+	
 }
