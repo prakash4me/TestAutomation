@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import pages.SectiondrawingPage;
 
 
-public class sectiondrawing {
+public class Sectiondrawing {
 	WebDriver driver;
 	
 	@Test(priority = 1)

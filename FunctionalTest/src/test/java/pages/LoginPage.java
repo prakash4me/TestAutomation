@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class loginPage {
+public class LoginPage {
 	
 	WebDriver driver;
 	//Locator for user name field
@@ -21,7 +21,7 @@ public class loginPage {
 	By loginBtn = By.xpath("//*[@id=\"signIn\"]");
 	
 	//Constructor that will be automatically called as soon as the object of the class is created
-		public loginPage(WebDriver driver) {
+		public LoginPage(WebDriver driver) {
 	          this.driver = driver;
 		}
 	

@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.loginPage;
+import pages.LoginPage;
 
 
 
-public class login {
+public class Login {
 
 	WebDriver driver;
     
@@ -27,7 +27,7 @@ public class login {
 	//Login with email 
     @Test
 	public void loginEmail() throws InterruptedException{
-    loginPage objLogin = new loginPage(driver);
+    LoginPage objLogin = new LoginPage(driver);
     driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     objLogin.enterUsername("automationtestemail@gmail.com");
     objLogin.enterPassword("qwerty123");
