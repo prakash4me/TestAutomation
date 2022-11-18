@@ -9,7 +9,7 @@ import pages.Dashboard;
 import pages.ProjectPopup;
 
 
-public class floorplantest {
+public class Floorplantest {
 	WebDriver driver;
 	
 	@Test
