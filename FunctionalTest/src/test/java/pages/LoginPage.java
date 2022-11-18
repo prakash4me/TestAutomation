@@ -2,8 +2,14 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class loginPage {
+public class LoginPage {
+	
+	private static WebElement element = null;
 	
 	WebDriver driver;
 	//Locator for user name field
@@ -20,11 +26,25 @@ public class loginPage {
 	//Locator for login button
 	By loginBtn = By.xpath("//*[@id=\"signIn\"]");
 	
+	//Locating the admin menu 
+	
+	
+	@FindBy(xpath ="//*[@id=\"ddlUser\"]/div[2]/span]")
+	private WebElement adminMenu;
+	
+	//Locator for logout 
+	By logOut = By.xpath("//*[@id=\"ddlUserContent\"]/li[12]/a");
+	
 	//Constructor that will be automatically called as soon as the object of the class is created
-		public loginPage(WebDriver driver) {
+		public LoginPage(WebDriver driver) {
 	          this.driver = driver;
 		}
-	
+
+		
+		private void waitForVisibility(WebElement element) throws Error{
+	           new WebDriverWait(driver, 60)
+	                .until(ExpectedConditions.visibilityOf(element));
+	    }
 	
 	//Method to enter username
 	public void enterUsername(String user) {
@@ -49,5 +69,19 @@ public class loginPage {
 	public void clickLogin() {
 		driver.findElement(loginBtn).click();
 	}
+	
+	public void clickAdminMenu(){
+        // Wait for txtBox to be visible, then send text
+        waitForVisibility(adminMenu);
+        adminMenu.click();
+	}
+	
+	
+	//Method to click logout
+	public void clickLogoutMenu() {
+		driver.findElement(logOut).click();
+	}
+	
+	
 
 }
