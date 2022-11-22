@@ -39,8 +39,9 @@ public class LoginPage {
 	@FindBy(xpath ="//*[@id=\"ddlUser\"]/div[2]/span]")
 	private WebElement adminMenu;
 	
-	//Locator for logout 
-	By logOut = By.xpath("//*[@id=\"ddlUserContent\"]/li[12]/a");
+	//Locator for logout  
+	@FindBy (xpath="//*[@id=\"ddlUserContent\"]/li[12]/a")
+	private WebElement logOutMenu;
 	
 	//Constructor that will be automatically called as soon as the object of the class is created
 		public LoginPage(WebDriver driver) {
@@ -96,10 +97,10 @@ public class LoginPage {
         adminMenu.click();
 	}
 	
-	
 	//Method to click logout
 	public void clickLogoutMenu() {
-		driver.findElement(logOut).click();
+		waitForVisibility(logOutMenu);
+		logOutMenu.click();
 	}
 	
 	

@@ -28,6 +28,8 @@ public class Login {
     objLogin.enterPassword("qwerty123");
    //objLogin.selectCompany("Bygglov24");
     objLogin.clickLogin();
-    Thread.sleep(3000);
+	driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	objLogin.clickAdminMenu();
+	objLogin.clickLogoutMenu();
 }
 }
