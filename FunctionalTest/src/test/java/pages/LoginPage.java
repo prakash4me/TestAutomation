@@ -1,8 +1,11 @@
 package pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,6 +16,10 @@ public class LoginPage {
 	
 	WebDriver driver;
 	//Locator for user name field
+	
+	String BaseURL = "https://pilot.bygglov24.com";
+	
+	
 	By uName = By.xpath("//*[@id=\"Email\"]");
 	//WebElement  uName = driver.findElement(By.id("Email"));
 	
@@ -45,6 +52,19 @@ public class LoginPage {
 	           new WebDriverWait(driver, 60)
 	                .until(ExpectedConditions.visibilityOf(element));
 	    }
+		
+		public void BaseURL() {
+			driver.get(BaseURL);
+		}
+		
+		public void Launchbrowser() {
+			System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
+			LoginPage objectURL = new LoginPage(driver);
+			objectURL.BaseURL();
+		}
 	
 	//Method to enter username
 	public void enterUsername(String user) {
