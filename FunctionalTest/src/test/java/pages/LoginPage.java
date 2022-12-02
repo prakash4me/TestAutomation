@@ -14,10 +14,11 @@ public class LoginPage {
 	
 	private static WebElement element = null;
 	
-	WebDriver driver;
+	static WebDriver driver;
 	//Locator for user name field
 	
-	String BaseURL = "https://pilot.bygglov24.com";
+	//PageURL
+ String BaseURL = "https://pilot.bygglov24.com";
 	
 	
 	By uName = By.xpath("//*[@id=\"Email\"]");
@@ -58,15 +59,11 @@ public class LoginPage {
 			driver.get(BaseURL);
 		}
 		
-		public void Launchbrowser() {
-			System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
-			LoginPage objectURL = new LoginPage(driver);
-			objectURL.BaseURL();
+		public void ClosePage() {
+			driver.close();
 		}
-	
+		
+			
 	//Method to enter username
 	public void enterUsername(String user) {
 		
@@ -102,6 +99,8 @@ public class LoginPage {
 		waitForVisibility(logOutMenu);
 		logOutMenu.click();
 	}
+
+
 	
 	
 }
