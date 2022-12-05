@@ -18,7 +18,7 @@ public class Login {
 	//Login with email 
     @Test
 	public void loginEmail() throws InterruptedException{
-    	driver = Signup.Signuplanchbrowser();
+    driver = LoginPage.Lanchbrowser();
     LoginPage objLogin = new LoginPage(driver);
     driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     objLogin.enterUsername("automationtestemail@gmail.com");

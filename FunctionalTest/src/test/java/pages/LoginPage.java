@@ -59,9 +59,18 @@ public class LoginPage {
 			driver.get(BaseURL);
 		}
 		
-		public void ClosePage() {
+		public void CloseBrowser() {
 			driver.close();
 		}
+		public static WebDriver Lanchbrowser() {
+			
+			   System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+				WebDriver driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
+				driver.get("https://pilot.bygglov24.com");
+				return driver;
+		   }
 		
 			
 	//Method to enter username
