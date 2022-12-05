@@ -25,9 +25,14 @@ public class Signup{
 	    	String actualURL = driver.getCurrentUrl();
 	    	Assert.assertEquals(expectedURL, actualURL);
 	    	System.out.println("Test pass");
-	    	LoginPage CloseBrowser = new LoginPage(driver);
-	    	CloseBrowser.CloseBrowser();
+	    	//LoginPage CloseBrowser = new LoginPage(driver);
+	    	//CloseBrowser.CloseBrowser();
 	    }
+	@Test
+	public void SignupProcess() throws InterruptedException{
+		SignupPage s = new SignupPage(driver);
+		s.Firstname();
+	}
 	  
 	    
 	   }
