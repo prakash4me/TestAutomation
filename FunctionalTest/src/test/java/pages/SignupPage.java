@@ -53,6 +53,6 @@ public class SignupPage {
 	  }
 	 
 	  public void Firstname() {
-		  driver.findElement(FirstNameSignup).sendKeys(Firstname);
+		  		  driver.findElement(FirstNameSignup).sendKeys("000"+Firstname);
 	  }
 	}
