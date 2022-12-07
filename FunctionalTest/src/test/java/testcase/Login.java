@@ -28,5 +28,6 @@ public class Login {
 	driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	objLogin.clickAdminMenu();
 	objLogin.clickLogoutMenu();
+	objLogin.CloseBrowser();
 }
 }

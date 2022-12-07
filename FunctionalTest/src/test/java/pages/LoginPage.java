@@ -36,14 +36,15 @@ public class LoginPage {
 	
 	//Locating the admin menu 
 	
-	
+	/*
 	@FindBy(xpath ="//*[@id=\"ddlUser\"]/div[2]/span]")
 	private WebElement adminMenu;
+	*/
+	By adminMenu = By.xpath("//*[@id=\"ddlUser\"]/div[2]/span");
 	
 	//Locator for logout  
-	@FindBy (xpath="//*[@id=\"ddlUserContent\"]/li[12]/a")
-	private WebElement logOutMenu;
-	
+	By logOutMenu = By.xpath("//*[@id=\"ddlUserContent\"]/li[3]/a");
+		
 	//Constructor that will be automatically called as soon as the object of the class is created
 		public LoginPage(WebDriver driver) {
 	          this.driver = driver;
@@ -99,14 +100,15 @@ public class LoginPage {
 	
 	public void clickAdminMenu(){
         // Wait for txtBox to be visible, then send text
-        waitForVisibility(adminMenu);
-        adminMenu.click();
+        //waitForVisibility(adminMenu);
+        driver.findElement(adminMenu).click();
 	}
 	
 	//Method to click logout
 	public void clickLogoutMenu() {
-		waitForVisibility(logOutMenu);
-		logOutMenu.click();
+		//waitForVisibility(logOutMenu);
+		driver.findElement(logOutMenu).click();
+		
 	}
 
 
