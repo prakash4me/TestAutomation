@@ -2,7 +2,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class FloorPlan {
+public class FloorPlanPage {
 	
 	WebDriver driver;
 	
@@ -32,7 +32,7 @@ public class FloorPlan {
 	By miscellaneous = By.xpath("//*[@id=\"miscallenous_nrml\"]");
 	
 	//Constructor 
-	public FloorPlan(WebDriver driver) {
+	public FloorPlanPage(WebDriver driver) {
         this.driver = driver;
 	}
 	

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.WebDriver.manage();
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -14,7 +15,9 @@ public class SignupPage {
 
 	
 	  WebDriver driver = null;
-	  public static int SignupIncrementalvalues = 0001;
+
+	  public static int SignupIncrementalvalues = 10000;
+	  public static int EmailIncreamentalvalue = 20000;
 	  
 	 //Signup option locator from login page 
 	  By clickSignupLink = By.xpath("//a[text()='Skapa konto']"); 
@@ -38,9 +41,16 @@ public class SignupPage {
 	 By PrivacyPolicyCheckbox = By.id("IsPrivacyPolicy");
 	 //Locator for Signup button
 	 By SignupButton = By.id("signUp"); 
+	 //Locator for Dashboard my Project menu
+	 By MyProject = By.xpath("//a[text()='Mina projekt']");
+	 //Locator for Create new pop-up
+	 By CreateNewProjectPopup = By.id("createProjectPopup");
 	 
-	 StringBuilder Firstname = new StringBuilder().append(++SignupIncrementalvalues).append("automation");
 	 
+	 StringBuilder Firstname = new StringBuilder().append(++SignupIncrementalvalues).append("Automation");
+	 String Lastname ="Tester";
+	 StringBuilder Email = new StringBuilder().append(++EmailIncreamentalvalue).append("automationtester@asteroidsoft.com");
+	 String Password ="qwerty123";
 	  
 	  public SignupPage(WebDriver driver) 
 	  { 
@@ -53,6 +63,54 @@ public class SignupPage {
 	  }
 	 
 	  public void Firstname() {
-		  		  driver.findElement(FirstNameSignup).sendKeys("000"+Firstname);
+		  		  driver.findElement(FirstNameSignup).sendKeys(Firstname);
 	  }
+	  public void Lastname() {
+		  driver.findElement(LastnameSignup).sendKeys(Lastname);
+	  }
+	  public void Email() {
+		  driver.findElement(EmailIdSignUp).sendKeys(Email);
+	  }
+	  public void Password() {
+		  driver.findElement(PasswordSignup).sendKeys(Password);
+	  }
+	  public void ConfirmPassword() {
+		  driver.findElement(ConfirmPassword).sendKeys(Password);
+	  }
+	  public void selectCompany(String companyName) {
+		  WebElement CompanyDropDown = driver.findElement(SelectCompanySignup);  
+		  //WebDriverWait wait=new WebDriverWait(driver,20);
+		  //WebElement CompanyDropDow=wait.until(ExpectedConditions.visibilityOfElementLocated(MyProject));
+		  Select Company = new Select(CompanyDropDown); 
+		  Company.selectByValue(companyName);
+	  }
+	  public void PrivacyPolicy() {
+		  driver.findElement(PrivacyPolicyCheckbox).click();
+	  }
+		
+	  public void ClickSubmit() {
+		  driver.findElement(SignupButton).click();
+	  }
+	  
+	  public void AssertNewProjectPopupCheck() {
+		  WebDriverWait wait=new WebDriverWait(driver,20);
+		  WebElement CreatePopup=wait.until(ExpectedConditions.visibilityOfElementLocated(CreateNewProjectPopup));
+		  boolean status = CreatePopup.isDisplayed();
+		  if (status) {
+				System.out.println("CreatePopup is visible");
+			} else {
+				System.out.println("CreatePopup is not visible");
+			}
+	  }
+	  public void AssertDashboardCheck() {
+		  WebDriverWait wait=new WebDriverWait(driver,20);
+		  WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(MyProject));
+		  boolean status = element.isDisplayed();
+		  if (status) {
+				System.out.println("Dashboard is visible");
+			} else {
+				System.out.println("Dashboard is not visible");
+			}
+	  }
+	  
 	}

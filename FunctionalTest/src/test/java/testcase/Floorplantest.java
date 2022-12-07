@@ -5,8 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pages.Dashboard;
-import pages.ProjectPopup;
+import pages.DashboardPage;
+import pages.ProjectPopupPage;
 
 
 public class Floorplantest {
@@ -14,9 +14,9 @@ public class Floorplantest {
 	
 	@Test
     public void createProject() throws InterruptedException{
-    	Dashboard objDashboard = new Dashboard(driver);
+    	DashboardPage objDashboard = new DashboardPage(driver);
     	objDashboard.createProject();
-    	ProjectPopup objprojectPopup = new ProjectPopup(driver);
+    	ProjectPopupPage objprojectPopup = new ProjectPopupPage(driver);
     	Thread.sleep(3000);
     	objprojectPopup.selectConstructionType();
     	Thread.sleep(3000);

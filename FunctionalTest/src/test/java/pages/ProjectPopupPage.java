@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ProjectPopup {
+public class ProjectPopupPage {
 	
 	WebDriver driver;
 	
@@ -18,7 +18,7 @@ public class ProjectPopup {
 	//Locator for create button
 	By createProject = By.xpath("//*[@id=\'btnReady\']");
   	
- public ProjectPopup(WebDriver driver)
+ public ProjectPopupPage(WebDriver driver)
  {
 	this.driver = driver; 
  }
