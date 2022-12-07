@@ -21,7 +21,7 @@ public class Login {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		objLogin.enterUsername("automationtestemail@gmail.com");
 		objLogin.enterPassword("qwerty123");
-		// objLogin.selectCompany("Bygglov24");
+		objLogin.selectCompany("Bygglov24");
 		objLogin.clickLogin();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		objLogin.clickAdminMenu();

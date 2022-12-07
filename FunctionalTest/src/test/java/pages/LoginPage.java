@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -68,11 +69,13 @@ public class LoginPage {
 	public void enterPassword(String pass) {
 		driver.findElement(pswd).sendKeys(pass);
 	}
-	/*
-	 * //Method to select company public void selectCompany(String companyName) {
-	 * Select company = new Select(companyDropdown);
-	 * company.selectByVisibleText(companyName); }
-	 */
+
+	// Method to select company
+	public void selectCompany(String companyName) {
+		WebElement CompanyDropDown = driver.findElement(companyDropdown);
+		Select company = new Select(CompanyDropDown);
+		company.selectByVisibleText(companyName);
+	}
 
 	// Method to click on Login button
 	public void clickLogin() {
