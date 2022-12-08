@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Random;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,8 +18,11 @@ public class SignupPage {
 	
 	  WebDriver driver = null;
 
-	  public static int SignupIncrementalvalues = 10000;
+	  public static float SignupIncrementalvalues = 1000;
 	  public static int EmailIncreamentalvalue = 20000;
+	  Random r = new Random();
+	    String randomNumber = String.format("%04d", r.nextInt(1001));
+	    
 	  
 	 //Signup option locator from login page 
 	  By clickSignupLink = By.xpath("//a[text()='Skapa konto']"); 
@@ -45,11 +50,15 @@ public class SignupPage {
 	 By MyProject = By.xpath("//a[text()='Mina projekt']");
 	 //Locator for Create new pop-up
 	 By CreateNewProjectPopup = By.id("createProjectPopup");
+	 //Locator for New Construction radio button selected
+	 By NewConstructionRadioButton = By.id("constructionType1");
+	//Locator for Attefall Construction radio button selected
+     By AttefallConstructionRadioButton = By.id("constructionType2");
 	 
 	 
-	 StringBuilder Firstname = new StringBuilder().append(++SignupIncrementalvalues).append("Automation");
+	 StringBuilder Firstname = new StringBuilder().append(randomNumber).append("Automation");
 	 String Lastname ="Tester";
-	 StringBuilder Email = new StringBuilder().append(++EmailIncreamentalvalue).append("automationtester@asteroidsoft.com");
+	 StringBuilder Email = new StringBuilder().append(randomNumber).append("automationtester@asteroidsoft.com");
 	 String Password ="qwerty123";
 	  
 	  public SignupPage(WebDriver driver) 
@@ -79,8 +88,6 @@ public class SignupPage {
 	  }
 	  public void selectCompany(String companyName) {
 		  WebElement CompanyDropDown = driver.findElement(SelectCompanySignup);  
-		  //WebDriverWait wait=new WebDriverWait(driver,20);
-		  //WebElement CompanyDropDow=wait.until(ExpectedConditions.visibilityOfElementLocated(MyProject));
 		  Select Company = new Select(CompanyDropDown); 
 		  Company.selectByValue(companyName);
 	  }
@@ -111,6 +118,18 @@ public class SignupPage {
 			} else {
 				System.out.println("Dashboard is not visible");
 			}
+	  
 	  }
 	  
+		public void AssertConstructionTypeCheck() {
+			
+			 WebDriverWait wait=new WebDriverWait(driver,20);
+			  WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(NewConstructionRadioButton));
+			  WebElement element1 = driver.findElement(AttefallConstructionRadioButton);
+			  if (element.isSelected()) {
+					System.out.println("Signup with other than attefall company selected");
+				} else if (element1.isSelected()) {
+					System.out.println("Signup with attefall company selected");
+				}
+	}
 	}
