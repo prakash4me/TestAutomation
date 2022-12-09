@@ -17,11 +17,8 @@ public class SignupPage {
 
 	
 	  WebDriver driver = null;
-
-	  public static float SignupIncrementalvalues = 1000;
-	  public static int EmailIncreamentalvalue = 20000;
-	  Random r = new Random();
-	    String randomNumber = String.format("%04d", r.nextInt(1001));
+      Random r = new Random();
+	  String randomNumber = String.format("%04d", r.nextInt(1001));
 	    
 	  
 	 //Signup option locator from login page 
