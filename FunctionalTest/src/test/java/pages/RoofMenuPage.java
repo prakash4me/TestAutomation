@@ -35,7 +35,51 @@ public class RoofMenuPage {
 			By RoofMaterialPopup = By.id("roofMaterialObjects");
 			//Locator for close roof Material pop-up
 			By CloseRoofMaterialPopup = By.className("obj-close");
-			//
+			//Locator for ConcreateTileRebatd roof type
+			By SelectConcreateTileRebatd = By.id("ConcreateTileRebatd");
+			//Locator for TileRebated roof type
+			By SelectTileRebated = By.id("TileRebated");
+			//Locator for TileNotRebated roof type
+			By SelectTileNotRebated = By.id("TileNotRebated");
+			//Locator for MetalTileForm roof type
+			By SelectMetalTileForm = By.id("MetalTileForm");
+			//Locator for CorrugatedMetal roof type
+			By SelectCorrugatedMetal = By.id("CorrugatedMetal");
+			//Locator for Shingel roof type
+			By SelectShingel = By.id("Shingel");
+			//Locator for FeltOneLayour roof type
+			By SelectFeltOneLayour = By.id("FeltOneLayour");
+			//Locator for FeltTwoLayer roof type
+			By SelectFeltTwoLayer = By.id("FeltTwoLayer");
+			//Locator for FeltThreeLayour roof type
+			By SelectFeltThreeLayour = By.id("FeltThreeLayour");
+			//Locator for TinZinSimple roof type
+			By SelectTinZinSimple = By.id("TinZinSimple");
+			//Locator for TinZinDouble roof type
+			By SelectTinZinDouble = By.id("TinZinDouble");
+			//Locator for CorrugatedPolycarbonate roof type
+			By SelectCorrugatedPolycarbonate = By.id("CorrugatedPolycarbonate");
+			//Locator for MultiwallPolycarbonate roof type
+			By SelectMultiwallPolycarbonate = By.id("MultiwallPolycarbonate");
+			//Locator for Polycarbonate roof type
+			By SelectPolycarbonate = By.id("Polycarbonate");
+			//Locator for Glass roof type
+			By SelectGlass = By.id("Glass");
+			//Locator for Sedum roof type
+			By SelectSedum = By.id("Sedum");
+			//Locator for BoardRoof roof type
+			By SelectBoardRoof = By.id("BoardRoof");
+			
+			//Locator for Roof color field
+			By RoofColour = By.id("btnRoofColor");
+			//Locator for roof Color popup
+			By RoofColourPopup = By.id("roofMaterialObjects");
+			//Locator for close roof Colour pop-up
+			By CloseRoofColourPopup = By.className("obj-close hidedrpdwn");
+			
+			
+			
+			
 			By coloritem = By.xpath("//*[@id=\"ddlFacadeRoofColour\"]/div[16]");
 			
 			By gableoverhang = By.xpath("//*[@id=\"objectGableOverhangFacade\"]");
@@ -50,18 +94,18 @@ public class RoofMenuPage {
 			public RoofMenuPage(WebDriver driver) {
 		        this.driver = driver;
 			}
-			 public void clickroof()
+			 public void ClickRoofMenu()
 			 {
 				 
-				 driver. findElement(clickroof).click();
+				 driver. findElement(LeftSideRoofMenuICon).click();
 			 }
-			 public void clickrooftype()
+			 public void ClickRoofTypeField()
 			 { 
-				 driver.findElement(selectRoofType).click();
+				 driver.findElement(SelectRoofType).click();
 			 }
-			 public void selectpulpet()
+			 public void SelectPulpetRoofOption()
 			 {
-				 driver.findElement(selectpulpet).click();
+				 driver.findElement(SelectPulpet).click();
 			 }
 			 public void selectroofmaterial()
 			 {
