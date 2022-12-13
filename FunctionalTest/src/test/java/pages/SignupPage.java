@@ -44,7 +44,9 @@ public class SignupPage {
 	 //Locator for Signup button
 	 By SignupButton = By.id("signUp"); 
 	 //Locator for Dashboard my Project menu
-	 By MyProject = By.xpath("//a[text()='Mina projekt']");
+	 //By MyProject = By.xpath("//a[text()='Mina projekt']");
+	 By MyProject = By.id("dashboard-container");
+	
 	 //Locator for Create new pop-up
 	 By CreateNewProjectPopup = By.id("createProjectPopup");
 	 //Locator for New Construction radio button selected

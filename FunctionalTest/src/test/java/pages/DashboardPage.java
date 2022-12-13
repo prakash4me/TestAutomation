@@ -8,7 +8,8 @@ public class DashboardPage {
 	WebDriver driver;
 	
 	// Locator for Create button 
-	By createProject = By.xpath("//*[@id=\"tab-one\"]/div[1]/div[1]/a");
+	By createProject = By.xpath("//*[@id=\"plus-button\"]");
+	
 	
 	public DashboardPage(WebDriver driver) {
         this.driver = driver;
