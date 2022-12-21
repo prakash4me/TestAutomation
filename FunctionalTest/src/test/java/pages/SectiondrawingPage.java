@@ -42,8 +42,7 @@ public class SectiondrawingPage {
 
 	public void clicksectiondrawingbutton() {
 		driver. findElement(clicksectiondrawingbutton).click();
-		
-	}
+		}
 
 	 public void clickroof()
 	 {

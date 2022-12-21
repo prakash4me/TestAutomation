@@ -2,6 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FloorPlanPage {
 
@@ -36,7 +39,6 @@ public class FloorPlanPage {
 	public FloorPlanPage(WebDriver driver) {
 		this.driver = driver;
 	}
-
 	// Method to click wall menu
 	public void clickWall() {
 		driver.findElement(wall).click();

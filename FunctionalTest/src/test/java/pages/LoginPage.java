@@ -15,7 +15,7 @@ public class LoginPage {
 
 	private static WebElement element = null;
 
-	static WebDriver driver;
+	WebDriver driver;
 	// Locator for user name field
 
 	// PageURL

@@ -2,9 +2,10 @@
 <suite name="testcase">
   <test name="login">
     <classes>
-      <class name="testcase.Login"/>
       <class name="testcase.Signup"/>
-      <!-- <class name="testcase.Sectiondrawing"/> -->
+      <class name="testcase.Login"/>
+      <class name="testcase.Floorplantest"/>
+      <class name="testcase.Sectiondrawing"/> 
     </classes>
   </test>
 </suite>

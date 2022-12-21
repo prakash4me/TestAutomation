@@ -12,15 +12,16 @@ import pages.SignupPage;
 
 public class Login {
 
-	WebDriver driver = null;
+	private static WebDriver driver = null;
 	
 
 	// Login with email
 	
 	@Test
-	public void checkLogin() throws InterruptedException {
+	public WebDriver checkLogin() throws InterruptedException {
 		driver = LoginPage.Lanchbrowser();
 		loginEmail(driver);
+		return driver;
 		
 	}
 	

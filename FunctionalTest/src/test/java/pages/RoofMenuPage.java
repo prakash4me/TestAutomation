@@ -6,15 +6,24 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RoofMenuPage {
 	WebDriver driver;
-	     // Locator for Roof menu icon
+	//Locator for view buttons 
+	 By ViewIcons = By.id("btnGroupIcon");       
+	 //Locator for Section view icon
+	    By SectionView =By.xpath(".//button[contains(@onclick, 'showSectionView()')]");
+	    //Locator for section view canvas
+	    By SectionviewCanvas = By.id("canvas");
+	
+	     // Locator for Roof menu icon on left side in section drawing page
 			By LeftSideRoofMenuICon = By.id("roof_li_id");
 			
 		// Locator for Roof info section
 			//Locator for info section title
-			By RoofSectionTitle = By.xpath("//*[@id=\"roofFacadeEditSection\"]/div/div[1]/h3");
+			By RoofSectionTitle = By.xpath("//h3[contains (text(),'Tak')]");
 			//Locator for roof image
 			By RoofImage = By.id("editFacadeRoofMaterialImg");
 			
@@ -72,33 +81,72 @@ public class RoofMenuPage {
 			
 			//Locator for Roof color field
 			By RoofColour = By.id("btnRoofColor");
+			//Locator for Roof colour NCS code
+			By RoofNCSColour = By.id("roofFacadeEditColor");
 			//Locator for roof Color popup
 			By RoofColourPopup = By.id("roofMaterialObjects");
 			//Locator for close roof Colour pop-up
 			By CloseRoofColourPopup = By.className("obj-close hidedrpdwn");
+			// Locator for NCS code A field
+			By NCSCodeAField = By.id("ddlRoofNCSPartAListDiv");
+			// Locator for NCS code B field
+			By NCSCodeBField = By.id("ddlRoofNCSPartBListDiv");
+			// Locator for NCS code C field
+			By NCSCodeCField = By.id("ddlRoofNCSPartCListDiv");
+		    // Locator for NCS code D field
+			By NCSCodeDField = By.id("ddlRoofNCSPartDListDiv");
+			//Locator for preview of selected colour
+			By PreviewRoofNCSColor = By.id("previewRoofNCSColor");
+			//Locator for facade roof colours
+			By FacadeRoofColour = By.id("ddlFacadeRoofColour");
+			//Locator for Apply button
+			By ApplyColour = By.id("btnApplyRoofNCScolor");	
 			
+			//Locator for Open to nock yes option
+			By OpenNockCeilingYesRoof = By.id("openNockCeilingYesRoof");
+			//Locator for Open to nock No option
+			By OpenNockCeilingNoRoof = By.id("openNockCeilingNoRoof");
 			
+			//Locator for Left roof direction
+			By LeftRoofDirection = By.xpath(".//button[contains(@onclick, 'ChangeRoofDirection('left')')]");
+			//Locator for Top roof direction
+			By TopRoofDirection = By.xpath(".//button[contains(@onclick, 'ChangeRoofDirection('top')')]");
+			//Locator for Right roof direction
+			By RightRoofDirection = By.xpath(".//button[contains(@onclick, 'ChangeRoofDirection('right')')]");
+			//Locator for Bottom roof direction
+			By BottomRoofDirection = By.xpath(".//button[contains(@onclick, 'ChangeRoofDirection('bottom')')]");
 			
-			
-			By coloritem = By.xpath("//*[@id=\"ddlFacadeRoofColour\"]/div[16]");
-			
-			By gableoverhang = By.xpath("//*[@id=\"objectGableOverhangFacade\"]");
-			
-			By overhang = By.xpath("//*[@id=\"objectRoofOverhangFacade\"]");
-			
-			By select3d = By.xpath("//*[@id=\"btnFacade\"]");
-			
-			
-			
-			
+						
 			public RoofMenuPage(WebDriver driver) {
 		        this.driver = driver;
 			}
+			
+			public void ClickSectionView() {
+				WebDriverWait wait=new WebDriverWait(driver,20);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(SectionView));
+				driver.findElement(SectionView).click();
+			}
+			  public void AssertSectionViewCheck() {
+				  WebDriverWait wait=new WebDriverWait(driver,20);
+				  WebElement SectionCanvas;
+				  SectionCanvas =wait.until(ExpectedConditions.visibilityOfElementLocated(ViewIcons));
+				  SectionCanvas =wait.until(ExpectedConditions.visibilityOfElementLocated(SectionviewCanvas));
+				  boolean status = SectionCanvas.isDisplayed();
+				  if (status) {
+						System.out.println("Section View is visible");
+					} else {
+						System.out.println("Section View is not visible");
+					}
+			  }
 			 public void ClickRoofMenu()
 			 {
 				 
 				 driver. findElement(LeftSideRoofMenuICon).click();
+				 //String title = driver.findElement(RoofSectionTitle).getText();
+				 //System.out.println(title);
 			 }
+			 
+			 
 			 public void ClickRoofTypeField()
 			 { 
 				 driver.findElement(SelectRoofType).click();
