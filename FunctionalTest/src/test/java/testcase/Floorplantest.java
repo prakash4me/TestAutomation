@@ -13,22 +13,17 @@ import pages.FloorPlanPage;
 
 public class Floorplantest {
 	private static WebDriver driver;
-	DashboardPage objDashboard = new DashboardPage(driver);
-	ProjectPopupPage objprojectPopup = new ProjectPopupPage(driver);
-	FloorPlanPage objinFloor = new FloorPlanPage(driver);
 	
-	
+	@Test
 	public void FloorplanTest() throws InterruptedException{
-		Login l = new Login();
-		driver = l.checkLogin();
 		CreateNewProject();
-		wallMenu();
-		doorMenu();
+		WallMenu();
+		DoorMenu();
 	}
 	
 	 public WebDriver CreateNewProject() throws InterruptedException{
-		//Login l = new Login();
-		//driver = l.checkLogin();
+		Login l = new Login();
+		driver = l.checkLogin(); 
 		DashboardPage objDashboard = new DashboardPage(driver);
 		ProjectPopupPage objprojectPopup = new ProjectPopupPage(driver);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -41,15 +36,17 @@ public class Floorplantest {
     	return driver;
     	}
 	
-	@Test
-	public void wallMenu() {
-		if (objinFloor.AssertFloorPlanCheck() == true) {objinFloor.clickWall();} 
+//Need to check this condition
+	public void WallMenu() {
+		FloorPlanPage f = new FloorPlanPage(driver);
+		if (f.AssertFloorPlanCheck() == true) {f.clickWall();} 
 		else {System.out.print("Not in floorplan page");}
-		objinFloor.closeLeftMenu();
+		f.closeLeftMenu();
 	}
 
 	
-	public void doorMenu() {
+	public void DoorMenu() {
+		FloorPlanPage objinFloor = new FloorPlanPage(driver);
 		if (objinFloor.AssertFloorPlanCheck() == true) {objinFloor.doorMenu();} 
 		else {System.out.print("Not in floorplan page");}
 		objinFloor.closeLeftMenu();

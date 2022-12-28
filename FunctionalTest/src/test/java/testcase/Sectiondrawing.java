@@ -18,7 +18,7 @@ public class Sectiondrawing {
 	@Test(priority = 1)
 	public void LoginandCreateProject() throws InterruptedException {
 		Floorplantest s = new Floorplantest();
-		driver = s.CreateNewProject();
+		s.CreateNewProject();
 		RoofMenuCheck();
 		
 	}

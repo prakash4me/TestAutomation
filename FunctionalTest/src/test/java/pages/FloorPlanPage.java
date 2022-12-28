@@ -11,38 +11,40 @@ public class FloorPlanPage {
 	WebDriver driver;
 
 	// Locator for clicking wall menu
-	By wall = By.xpath("//*[@id =\"wall_actv\"]");
+	By wall = By.id("wall_li_id");
 
 	// Locator for clicking door menu
-	By door = By.xpath("//*[@id=\"door_actv\"]");
+	By door = By.id("door_li_id");
 
 	// Locator for clicking window menu
-	By window = By.xpath("//*[@id=\"window_actv\"]");
+	By window = By.id("window_li_id");
 
 	// Locator for clicking stair menu
-	By stair = By.xpath("//*[@id=\"stair_nrml\"]");
-
-	// Locator for room pending
+	By stair = By.id("stair_li_id");
+	
+	// Locator for room type
+	By Roomtype = By.id("roomtype_li_id");
 
 	// Locator for furniture menu
-	By furniture = By.xpath("//*[@id=\"furniture_actv\"]");
+	By furniture = By.id("furniture_li_id");
 
 	// Locator for template menu pending
+	By TemplateMenu = By.id("template_li_id");
 
 	// Locator for rooflevel menu
-	By roofLevel = By.xpath("//*[@id=\"roof_actv\"]");
+	By roofLevel = By.id("roof_li_id");
 
 	// Locator for miscellaneous menu
-	By miscellaneous = By.xpath("//*[@id=\"miscallenous_nrml\"]");
+	By miscellaneous = By.id("miscallenous_li_id");
 	
 	// Locator for floorplan
-		By floorPlan = By.xpath("//*[@id=\"leftMenu\"]/section/div[5]");
+		By floorPlan = By.xpath("//div[contains(@class,'floorPlanViewDiv')]");
 		
 	// Locator for innerwall
-		By selectNonBearingWall = By.xpath("//*[@id=\"nonbearingWall\"]/div/div[2]/span");
+		By selectNonBearingWall = By.id("innerwall_li_id");
 		
 	// Locator for closeleft menu
-		By closeLeftMenu = By.xpath("//*[@id=\"drlvl4\"]/a");
+		By closeLeftMenu = By.xpath(".//a[contains(@onclick, 'submenuClose('drlvl4')')]");
 
 	// Constructor
 	public FloorPlanPage(WebDriver driver) {
@@ -88,7 +90,7 @@ public class FloorPlanPage {
 	}
 
 	public boolean AssertFloorPlanCheck() {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(floorPlan));
 		boolean status = element.isDisplayed();
 		if (status) {
