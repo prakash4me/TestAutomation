@@ -34,6 +34,15 @@ public class FloorPlanPage {
 
 	// Locator for miscellaneous menu
 	By miscellaneous = By.xpath("//*[@id=\"miscallenous_nrml\"]");
+	
+	// Locator for floorplan
+		By floorPlan = By.xpath("//*[@id=\"leftMenu\"]/section/div[5]");
+		
+	// Locator for innerwall
+		By selectNonBearingWall = By.xpath("//*[@id=\"nonbearingWall\"]/div/div[2]/span");
+		
+	// Locator for closeleft menu
+		By closeLeftMenu = By.xpath("//*[@id=\"drlvl4\"]/a");
 
 	// Constructor
 	public FloorPlanPage(WebDriver driver) {
@@ -69,9 +78,25 @@ public class FloorPlanPage {
 		driver.findElement(roofLevel).click();
 	}
 
-	// Method to click window menu
+	// Method to click misellaneous menu
 	public void misellaneousMenu() {
 		driver.findElement(miscellaneous).click();
 	}
+	// Method to close the left menu
+	public void closeLeftMenu() {
+		driver.findElement(closeLeftMenu).click();
+	}
+
+	public boolean AssertFloorPlanCheck() {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(floorPlan));
+		boolean status = element.isDisplayed();
+		if (status) {
+			System.out.println("Floorplan is visible");
+		} else {
+			System.out.println("Floorplan is not visible");
+		}
+		return status;
+		}
 
 }
