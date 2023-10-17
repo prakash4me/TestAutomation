@@ -15,13 +15,14 @@ public class Login {
 	private static WebDriver driver = null;
 	
 
-	// Login with email
+	// Login with email check
 	
 	@Test
 	public WebDriver checkLogin() throws InterruptedException {
 		driver = LoginPage.Lanchbrowser();
 		loginEmail(driver);
 		return driver;
+		//Just for checking
 		
 	}
 	
